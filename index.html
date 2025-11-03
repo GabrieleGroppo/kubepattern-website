@@ -115,7 +115,7 @@
     </section>
 
     <!-- Code Example Section -->
-    <section class="code-example" id="how-it-works">
+<section class="code-example" id="how-it-works">
         <div class="code-container">
             <div class="code-content">
                 <h2>Simple Yet Powerful</h2>
@@ -144,17 +144,41 @@ kubectl get k8spatterns -A
 <span class="code-key">apiVersion:</span> <span class="code-value">kubepattern.it/v1</span>
 <span class="code-key">kind:</span> <span class="code-value">K8sPattern</span>
 <span class="code-key">metadata:</span>
-  <span class="code-key">name:</span> <span class="code-value">sidecar-509164000</span>
+  <span class="code-key">creationTimestamp:</span> <span class="code-value">"2025-11-03T11:43:54Z"</span>
+  <span class="code-key">generation:</span> <span class="code-value">1</span>
+  <span class="code-key">name:</span> <span class="code-value">sidecar--2109423650</span>
   <span class="code-key">namespace:</span> <span class="code-value">pattern-analysis-ns</span>
+  <span class="code-key">resourceVersion:</span> <span class="code-value">"278618"</span>
+  <span class="code-key">uid:</span> <span class="code-value">c0eccfb2-028d-4f11-a290-e26bc77d1e3b</span>
 <span class="code-key">spec:</span>
-  <span class="code-key">name:</span> <span class="code-value">sidecar</span>
+  <span class="code-key">apiVersion:</span> <span class="code-value">kubepattern.it/v1</span>
   <span class="code-key">confidence:</span> <span class="code-value">HIGH</span>
-  <span class="code-key">severity:</span> <span class="code-value">INFO</span>
+  <span class="code-key">description:</span> Identifies pods that should implement the sidecar pattern but are
+    incorrectly separated into different pods. The sidecar pattern places helper
+    containers alongside the main application container in the same pod to share
+    lifecycle, network, and storage resources. Common use cases include logging,
+    monitoring, configuration management, and service mesh proxies.
+  <span class="code-key">message:</span> Pod 'frontend' in namespace 'production' appears to be separated from
+    its sidecar pod 'logging' in namespace 'production'. These pods share volumes
+    and likely have a common lifecycle, suggesting they should be combined into
+    a single pod with multiple containers. This would improve resource sharing,
+    deployment atomicity, and reduce network overhead.
+  <span class="code-key">name:</span> <span class="code-value">sidecar</span>
+  <span class="code-key">referenceLink:</span> <span class="code-value">https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar-pattern.json</span>
   <span class="code-key">resources:</span>
-    - <span class="code-key">name:</span> <span class="code-value">frontend</span>
-      <span class="code-key">role:</span> <span class="code-value">main-app</span>
-    - <span class="code-key">name:</span> <span class="code-value">logging</span>
-      <span class="code-key">role:</span> <span class="code-value">sidecar</span></pre>
+  - <span class="code-key">name:</span> <span class="code-value">frontend</span>
+    <span class="code-key">namespace:</span> <span class="code-value">production</span>
+    <span class="code-key">role:</span> <span class="code-value">main-app</span>
+    <span class="code-key">uid:</span> <span class="code-value">a6ff6d51-eb41-46e7-bd05-059e60fbfe50</span>
+  - <span class="code-key">name:</span> <span class="code-value">logging</span>
+    <span class="code-key">namespace:</span> <span class="code-value">production</span>
+    <span class="code-key">role:</span> <span class="code-value">sidecar</span>
+    <span class="code-key">uid:</span> <span class="code-value">29969762-31ee-45f9-99ac-0252ead4ad2b</span>
+  <span class="code-key">scores:</span>
+  - <span class="code-key">category:</span> <span class="code-value">Relationship</span>
+    <span class="code-key">score:</span> <span class="code-value">10</span>
+  <span class="code-key">severity:</span> <span class="code-value">INFO</span>
+  <span class="code-key">type:</span> <span class="code-value">STRUCTURAL</span></pre>
             </div>
         </div>
     </section>
