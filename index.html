@@ -153,11 +153,10 @@ kubectl get k8spatterns -A
 <span class="code-key">spec:</span>
   <span class="code-key">apiVersion:</span> <span class="code-value">kubepattern.it/v1</span>
   <span class="code-key">confidence:</span> <span class="code-value">HIGH</span>
+  <span class="code-key">severity:</span> <span class="code-value">INFO</span>
+  <span class="code-key">type:</span> <span class="code-value">STRUCTURAL</span>
   <span class="code-key">description:</span> Identifies pods that should implement the sidecar pattern but are
-    incorrectly separated into different pods. The sidecar pattern places helper
-    containers alongside the main application container in the same pod to share
-    lifecycle, network, and storage resources. Common use cases include logging,
-    monitoring, configuration management, and service mesh proxies.
+    incorrectly separated into different pods.
   <span class="code-key">message:</span> Pod 'frontend' in namespace 'production' appears to be separated from
     its sidecar pod 'logging' in namespace 'production'. These pods share volumes
     and likely have a common lifecycle, suggesting they should be combined into
@@ -176,9 +175,7 @@ kubectl get k8spatterns -A
     <span class="code-key">uid:</span> <span class="code-value">29969762-31ee-45f9-99ac-0252ead4ad2b</span>
   <span class="code-key">scores:</span>
   - <span class="code-key">category:</span> <span class="code-value">Relationship</span>
-    <span class="code-key">score:</span> <span class="code-value">10</span>
-  <span class="code-key">severity:</span> <span class="code-value">INFO</span>
-  <span class="code-key">type:</span> <span class="code-value">STRUCTURAL</span></pre>
+    <span class="code-key">score:</span> <span class="code-value">10</span></pre>
             </div>
         </div>
     </section>
