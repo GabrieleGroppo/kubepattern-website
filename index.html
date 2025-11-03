@@ -134,9 +134,7 @@
             </div>
 
             <div class="code-block">
-                <pre><span class="code-comment"># Trigger cluster analysis</span>
-curl -X POST http://kubepattern:8080/analyzeCluster
-
+                <pre>
 <span class="code-comment"># View detected patterns</span>
 kubectl get k8spatterns -A
 
@@ -144,7 +142,7 @@ kubectl get k8spatterns -A
 <span class="code-key">apiVersion:</span> <span class="code-value">kubepattern.it/v1</span>
 <span class="code-key">kind:</span> <span class="code-value">K8sPattern</span>
 <span class="code-key">metadata:</span>
-  <span class="code-key">name:</span> <span class="code-value">sidecar--2109423650</span>
+  <span class="code-key">name:</span> <span class="code-value">sidecar-2109423650</span>
   <span class="code-key">namespace:</span> <span class="code-value">pattern-analysis-ns</span>
 <span class="code-key">spec:</span>
   <span class="code-key">confidence:</span> <span class="code-value">HIGH</span>
@@ -153,8 +151,7 @@ kubectl get k8spatterns -A
   <span class="code-key">message:</span> Pod 'frontend' in namespace 'production' appears to be separated from
     its sidecar pod 'logging' in namespace 'production'. These pods share volumes
     and likely have a common lifecycle, suggesting they should be combined into
-    a single pod with multiple containers. This would improve resource sharing,
-    deployment atomicity, and reduce network overhead.
+    a single pod with multiple containers.
   <span class="code-key">name:</span> <span class="code-value">sidecar</span>
   <span class="code-key">referenceLink:</span> <span class="code-value">https://github.com/GabrieleGroppo/kubepattern-registry/tree/main/doc/sidecar.json</span>
   <span class="code-key">resources:</span>
